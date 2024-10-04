@@ -18,13 +18,17 @@
 #include "devices/AVreceiver/device_yamahaAmp/device_yamahaAmp.h"
 //#include "devices/AVreceiver/device_denonAvr/device_denonAvr.h"
 //#include "devices/AVreceiver/device_lgsoundbar/device_lgsoundbar.h"
+#include "devices/AVreceiver/device_pioneer_vsxs520/device_pioneer_vsxs520.h"
 //   media player
 #include "devices/mediaPlayer/device_appleTV/device_appleTV.h"
 //#include "devices/mediaPlayer/device_lgbluray/device_lgbluray.h"
 //#include "devices/mediaPlayer/device_samsungbluray/device_samsungbluray.h"
 //#include "devices/mediaPlayer/device_shield/device_shield.h"
+#include "devices/converter/device_ossc/device_ossc.h"
 //   misc
 #include "devices/misc/device_smarthome/device_smarthome.h"
+//   projector
+#include "devices/projector/device_viewsonic_pjd7720hd/device_viewsonic_pjd7720hd.h"
 //#include "devices/misc/device_airconditioner/device_airconditioner.h"
 // register gui and keys
 #include "applicationInternal/gui/guiBase.h"
@@ -87,9 +91,10 @@ int main(int argc, char *argv[]) {
   register_device_samsungTV();
 //  register_device_lgTV();
   //   AV receiver
-  register_device_yamahaAmp();
+  // register_device_yamahaAmp();
   //register_device_denonAvr();
   //register_device_lgsoundbar();
+  register_device_pioneer_vsxs520();
   //   media player
   register_device_appleTV();
   //register_device_lgbluray();
@@ -98,6 +103,10 @@ int main(int argc, char *argv[]) {
   //   misc
   register_device_smarthome();
   //register_device_airconditioner();
+  //   converter
+  register_device_ossc();
+  //   projector
+  register_device_viewsonic_pjd7720hd();
 
   #if (ENABLE_KEYBOARD_MQTT == 1)
   register_device_keyboard_mqtt();
