@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {
   // register commands for the devices
   register_specialCommands();
   //   TV
-  register_device_samsungTV();
+  // register_device_samsungTV();
 //  register_device_lgTV();
   //   AV receiver
   // register_device_yamahaAmp();
@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
   //register_device_samsungbluray();
   //register_device_shield();
   //   misc
-  register_device_smarthome();
+  // register_device_smarthome();
   //register_device_airconditioner();
   //   converter
   register_device_ossc();
@@ -118,27 +118,27 @@ int main(int argc, char *argv[]) {
 
   // Register the GUIs. They will be displayed in the order they have been registered.
   register_gui_sceneSelection();
+  register_gui_appleTV();
   register_gui_irReceiver();
   register_gui_settings();
-  register_gui_appleTV();
-  register_gui_numpad();
-  register_gui_smarthome();
+  // register_gui_numpad();
+  // register_gui_smarthome();
   //register_gui_airconditioner();
-  register_gui_yamahaAmp();
+  // register_gui_yamahaAmp();
   // Only show these GUIs in the main gui list. If you don't set this explicitely, by default all registered guis are shown.
   #if (USE_SCENE_SPECIFIC_GUI_LIST != 0)
-  main_gui_list = {tabName_yamahaAmp, tabName_sceneSelection, tabName_smarthome, tabName_settings, tabName_irReceiver};
+  main_gui_list = {tabName_sceneSelection, tabName_settings, tabName_irReceiver};
   #endif
 
   // register the scenes and their key_commands_*
   register_scene_defaultKeys();
-  register_scene_TV();
-  register_scene_fireTV();
-  register_scene_chromecast();
+  // register_scene_TV();
+  // register_scene_fireTV();
+  // register_scene_chromecast();
   register_scene_appleTV();
-  register_scene_allOff();
+  // register_scene_allOff();
   // Only show these scenes on the sceneSelection gui. If you don't set this explicitely, by default all registered scenes are shown.
-  set_scenes_on_sceneSelectionGUI({scene_name_TV, scene_name_fireTV, scene_name_chromecast, scene_name_appleTV});
+  set_scenes_on_sceneSelectionGUI({scene_name_appleTV});
 
   // init GUI - will initialize tft, touch and lvgl
   init_gui();

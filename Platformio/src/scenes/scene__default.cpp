@@ -8,6 +8,7 @@
 #include "devices/converter/device_ossc/device_ossc.h"
 #include "devices/projector/device_viewsonic_pjd7720hd/device_viewsonic_pjd7720hd.h"
 #include "devices/AVreceiver/device_pioneer_vsxs520/device_pioneer_vsxs520.h"
+#include "devices/mediaPlayer/device_appleTV/device_appleTV.h"
 // scenes
 #include "scene__default.h"
 #include "scenes/scene_allOff.h"
@@ -50,16 +51,16 @@ void register_scene_defaultKeys(void) {
   };
   
   key_commands_short_default = {
-                                                                                                             {KEY_OFF,   SCENE_ALLOFF_FORCE},
-    {KEY_STOP,  GUI_SMARTHOME_ACTIVATE}, {KEY_REWI,  OSSC_BACKLIGHT_TOGGLE }, {KEY_PLAY,  VIEWSONIC_PJD7720HD_POWER }, {KEY_FORW,  PIONEER_VSXS520_POWER },
-  /*{KEY_CONF,  COMMAND_UNKNOWN  },                                                                          {KEY_INFO,  COMMAND_UNKNOWN  },*/
-                                                     /*  {KEY_UP,    COMMAND_UNKNOWN  },*/
-                      {KEY_LEFT,  GUI_PREV  },       /*  {KEY_OK,    COMMAND_UNKNOWN  },*/  {KEY_RIGHT, GUI_NEXT  },
-                                                     /*  {KEY_DOWN,  COMMAND_UNKNOWN  },*/
-    {KEY_BACK,  SCENE_SELECTION  },                                                                        /*{KEY_SRC,   COMMAND_UNKNOWN  },*/
-    {KEY_VOLUP, PIONEER_VSXS520_VOLUME_UP  },                      {KEY_MUTE,  PIONEER_VSXS520_VOLUME_MUTE},                  /*{KEY_CHUP,  COMMAND_UNKNOWN  },*/
-    {KEY_VOLDO, PIONEER_VSXS520_VOLUME_DOWN },                      {KEY_REC,   SCENE_BACK_TO_PREVIOUS_GUI_LIST  },   /*{KEY_CHDOW, COMMAND_UNKNOWN  },*/
-    {KEY_RED,   SCENE_TV_FORCE   },    {KEY_GREEN, SCENE_FIRETV_FORCE},  {KEY_YELLO, SCENE_CHROMECAST_FORCE},{KEY_BLUE,  SCENE_APPLETV_FORCE},
+                                                                                                     {KEY_OFF,   SCENE_ALLOFF_FORCE},
+    {KEY_STOP,  GUI_SMARTHOME_ACTIVATE}, {KEY_REWI,  COMMAND_UNKNOWN}, {KEY_PLAY,  APPLETV_PLAYPAUSE}, {KEY_FORW,  COMMAND_UNKNOWN},
+    {KEY_CONF,  APPLETV_MENU},                                                                    {KEY_INFO,  COMMAND_UNKNOWN},
+                                                       {KEY_UP,    APPLETV_UP  },
+                      {KEY_LEFT,  APPLETV_LEFT  },     {KEY_OK,    APPLETV_ENTER  },  {KEY_RIGHT, APPLETV_RIGHT  },
+                                                       {KEY_DOWN,  APPLETV_DOWN  },
+    {KEY_BACK,  SCENE_SELECTION  },                                                                        {KEY_SRC,   COMMAND_UNKNOWN  },
+    {KEY_VOLUP, PIONEER_VSXS520_VOLUME_UP  },                      {KEY_MUTE,  PIONEER_VSXS520_VOLUME_MUTE},                  {KEY_CHUP,  COMMAND_UNKNOWN  },
+    {KEY_VOLDO, PIONEER_VSXS520_VOLUME_DOWN },                      {KEY_REC,   SCENE_BACK_TO_PREVIOUS_GUI_LIST  },   {KEY_CHDOW, COMMAND_UNKNOWN  },
+    {KEY_RED,   VIEWSONIC_PJD7720HD_POWER   },    {KEY_GREEN, PIONEER_VSXS520_POWER},  {KEY_YELLO, COMMAND_UNKNOWN},{KEY_BLUE,  OSSC_BACKLIGHT_TOGGLE},
   };
   
   key_commands_long_default = {
