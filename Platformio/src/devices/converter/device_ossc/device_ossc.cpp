@@ -14,7 +14,7 @@ uint16_t OSSC_SCANLINE_INT_DOWN;
 uint16_t OSSC_MENU_TOGGLE;
 uint16_t OSSC_NEXT;
 uint16_t OSSC_VALUE_MINUS;
-uint16_t OSSC_OSSC_OK;
+uint16_t OSSC_OK;
 uint16_t OSSC_VALUE_PLUS;
 uint16_t OSSC_PREV;
 uint16_t OSSC_BACK;
@@ -42,7 +42,7 @@ void register_device_ossc() {
   register_command(&OSSC_MENU_TOGGLE      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC14DB2"}));
   register_command(&OSSC_NEXT             , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC12DD2"}));
   register_command(&OSSC_VALUE_MINUS      , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC1AD52"}));
-  register_command(&OSSC_OSSC_OK          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC11DE2"}));
+  register_command(&OSSC_OK               , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC11DE2"}));
   register_command(&OSSC_VALUE_PLUS       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC16D92"}));
   register_command(&OSSC_PREV             , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC1CD32"}));
   register_command(&OSSC_BACK             , makeCommandData(IR, {std::to_string(IR_PROTOCOL_NEC), "0x3EC1ED12"}));

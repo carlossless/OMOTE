@@ -40,6 +40,7 @@
 #include "devices/AVreceiver/device_yamahaAmp/gui_yamahaAmp.h"
 #include "devices/mediaPlayer/device_appleTV/gui_appleTV.h"
 #include "devices/misc/device_smarthome/gui_smarthome.h"
+#include "devices/converter/device_ossc/gui_ossc.h"
 //#include "devices/misc/device_airconditioner/gui_airconditioner.h"
 #include "applicationInternal/keys.h"
 #include "applicationInternal/gui/guiStatusUpdate.h"
@@ -50,6 +51,7 @@
 #include "scenes/scene_fireTV.h"
 #include "scenes/scene_chromecast.h"
 #include "scenes/scene_appleTV.h"
+#include "scenes/scene_ossc.h"
 #include "applicationInternal/scenes/sceneHandler.h"
 
 #if defined(ARDUINO)
@@ -118,13 +120,14 @@ int main(int argc, char *argv[]) {
 
   // Register the GUIs. They will be displayed in the order they have been registered.
   register_gui_sceneSelection();
-  register_gui_appleTV();
   register_gui_irReceiver();
   register_gui_settings();
   // register_gui_numpad();
   // register_gui_smarthome();
   //register_gui_airconditioner();
   // register_gui_yamahaAmp();
+  register_gui_appleTV();
+  register_gui_ossc();
   // Only show these GUIs in the main gui list. If you don't set this explicitely, by default all registered guis are shown.
   #if (USE_SCENE_SPECIFIC_GUI_LIST != 0)
   main_gui_list = {tabName_sceneSelection, tabName_settings, tabName_irReceiver};
@@ -136,9 +139,10 @@ int main(int argc, char *argv[]) {
   // register_scene_fireTV();
   // register_scene_chromecast();
   register_scene_appleTV();
+  register_scene_ossc();
   // register_scene_allOff();
   // Only show these scenes on the sceneSelection gui. If you don't set this explicitely, by default all registered scenes are shown.
-  set_scenes_on_sceneSelectionGUI({scene_name_appleTV});
+  set_scenes_on_sceneSelectionGUI({scene_name_appleTV, scene_name_ossc});
 
   // init GUI - will initialize tft, touch and lvgl
   init_gui();

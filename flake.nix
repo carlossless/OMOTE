@@ -10,7 +10,12 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in {
         devShell = pkgs.mkShell {
-          buildInputs = [ pkgs.platformio ];
+          buildInputs = with pkgs; [ 
+            platformio 
+            SDL2 
+            SDL2_image 
+            SDL2_ttf
+          ];
           shellHook = ''
             export PLATFORMIO_CORE_DIR=$PWD/.platformio
           '';

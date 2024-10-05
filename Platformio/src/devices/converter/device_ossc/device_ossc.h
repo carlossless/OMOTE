@@ -11,7 +11,7 @@ extern uint16_t OSSC_SCANLINE_INT_DOWN;
 extern uint16_t OSSC_MENU_TOGGLE;
 extern uint16_t OSSC_NEXT;
 extern uint16_t OSSC_VALUE_MINUS;
-extern uint16_t OSSC_OSSC_OK;
+extern uint16_t OSSC_OK;
 extern uint16_t OSSC_VALUE_PLUS;
 extern uint16_t OSSC_PREV;
 extern uint16_t OSSC_BACK;
