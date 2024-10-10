@@ -42,7 +42,7 @@ void register_scene_defaultKeys(void) {
     {KEY_STOP,  SHORT            },    {KEY_REWI,  SHORTorLONG      },    {KEY_PLAY,  SHORT            },    {KEY_FORW,  SHORTorLONG      },
     {KEY_CONF,  SHORT            },                                                                          {KEY_INFO,  SHORT            },
                                                          {KEY_UP,    SHORT            },
-                      {KEY_LEFT,  SHORT            },    {KEY_OK,    SHORT            },    {KEY_RIGHT, SHORT            },
+                      {KEY_LEFT,  SHORT_REPEATED   },    {KEY_OK,    SHORT            },    {KEY_RIGHT, SHORT_REPEATED         },
                                                          {KEY_DOWN,  SHORT            },
     {KEY_BACK,  SHORT            },                                                                          {KEY_SRC,   SHORT            },
     {KEY_VOLUP, SHORT_REPEATED   },                      {KEY_MUTE,  SHORT            },                     {KEY_CHUP,  SHORT            },
@@ -64,8 +64,6 @@ void register_scene_defaultKeys(void) {
   };
   
   key_commands_long_default = {
-  
-  
   };
 
   register_command(&SCENE_SELECTION                , makeCommandData(SCENE, {scene_name_selection}));
