@@ -66,7 +66,7 @@ uint16_t PIONEER_VSXS520_MODE;
 void register_device_pioneer_vsxs520() {
   register_command(&PIONEER_VSXS520_POWER         , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55A38C7A55A38C7"}));
   register_command(&PIONEER_VSXS520_BD_DVD        , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55A3AC5A55A03FC"}));
-  register_command(&PIONEER_VSXS520_GAME          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55A3AC5A55A035C"}));
+  register_command(&PIONEER_VSXS520_GAME          , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55A3AC5A55AA35C"}));
   register_command(&PIONEER_VSXS520_CBL_SAT       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55A08F7A55A08F7"}));
   register_command(&PIONEER_VSXS520_STRMBOX       , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55AEA15F50A6C93"}));
   register_command(&PIONEER_VSXS520_CD            , makeCommandData(IR, {std::to_string(IR_PROTOCOL_PIONEER), "0xA55A32CDA55A32CD"}));
