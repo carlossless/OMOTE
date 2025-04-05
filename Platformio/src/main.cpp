@@ -42,6 +42,7 @@
 #include "devices/misc/device_smarthome/gui_smarthome.h"
 #include "devices/converter/device_ossc/gui_ossc.h"
 #include "devices/AVreceiver/device_pioneer_vsxs520/gui_pioneer_vsxs520.h"
+#include "devices/projector/device_viewsonic_pjd7720hd/gui_viewsonic_pjd7720hd.h"
 //#include "devices/misc/device_airconditioner/gui_airconditioner.h"
 #include "applicationInternal/keys.h"
 #include "applicationInternal/gui/guiStatusUpdate.h"
@@ -54,6 +55,7 @@
 #include "scenes/scene_appleTV.h"
 #include "scenes/scene_ossc.h"
 #include "scenes/scene_receiver.h"
+#include "scenes/scene_projector.h"
 #include "applicationInternal/scenes/sceneHandler.h"
 
 #if defined(ARDUINO)
@@ -131,6 +133,7 @@ int main(int argc, char *argv[]) {
   register_gui_appleTV();
   register_gui_ossc();
   register_gui_pioneer_vsxs520();
+  register_gui_viewsonic_pjd7720hd();
   // Only show these GUIs in the main gui list. If you don't set this explicitely, by default all registered guis are shown.
   #if (USE_SCENE_SPECIFIC_GUI_LIST != 0)
   main_gui_list = {tabName_sceneSelection, tabName_settings, tabName_irReceiver};
@@ -144,9 +147,10 @@ int main(int argc, char *argv[]) {
   register_scene_appleTV();
   register_scene_ossc();
   register_scene_receiver();
+  register_scene_projector();
   // register_scene_allOff();
   // Only show these scenes on the sceneSelection gui. If you don't set this explicitely, by default all registered scenes are shown.
-  set_scenes_on_sceneSelectionGUI({scene_name_appleTV, scene_name_ossc, scene_name_receiver});
+  set_scenes_on_sceneSelectionGUI({scene_name_appleTV, scene_name_ossc, scene_name_receiver, scene_name_projector});
 
   // init GUI - will initialize tft, touch and lvgl
   init_gui();

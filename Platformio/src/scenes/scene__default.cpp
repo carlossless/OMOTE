@@ -39,7 +39,7 @@ t_gui_list main_gui_list;
 void register_scene_defaultKeys(void) {
   key_repeatModes_default = {
                                                                                                              {KEY_OFF,   SHORT            },
-    {KEY_STOP,  SHORT            },    {KEY_REWI,  SHORTorLONG      },    {KEY_PLAY,  SHORT            },    {KEY_FORW,  SHORTorLONG      },
+    {KEY_STOP,  SHORT            },  {KEY_REWI,  SHORT_REPEATED      },    {KEY_PLAY,  SHORT            },   {KEY_FORW,  SHORT_REPEATED   },
     {KEY_CONF,  SHORT            },                                                                          {KEY_INFO,  SHORT            },
                                                          {KEY_UP,    SHORT            },
                       {KEY_LEFT,  SHORT_REPEATED   },    {KEY_OK,    SHORT            },    {KEY_RIGHT, SHORT_REPEATED         },
@@ -70,5 +70,4 @@ void register_scene_defaultKeys(void) {
   register_command(&SCENE_BACK_TO_PREVIOUS_GUI_LIST, makeCommandData(SCENE, {scene_back_to_previous_gui_list}));
   register_command(&GUI_PREV                       , makeCommandData(SCENE, {scene_gui_prev}));
   register_command(&GUI_NEXT                       , makeCommandData(SCENE, {scene_gui_next}));
-
 }
